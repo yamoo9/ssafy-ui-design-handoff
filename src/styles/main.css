@@ -1,3 +1,4 @@
-@layer base;
+@layer base, components;
 @import './base/normalize.css' layer(base);
 @import './base/base.css' layer(base);
+@import './components/switch.css' layer(components);
