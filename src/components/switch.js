@@ -32,7 +32,7 @@ class Switch {
 
   #render() {
     this.#switchWrapper = this.#parseElement();
-    this.#switchElement = this.#switchWrapper.querySelector('[role="switch"]')
+    this.#switchElement = this.#switchWrapper.querySelector('[role="switch"]');
     this.#parentElement.replaceChild(this.#switchWrapper, this.#element);
     this.#bind();
   }
@@ -42,12 +42,20 @@ class Switch {
     const labelElement = wraprerElement.querySelector('.switch--label');
     const switchElement = labelElement.nextElementSibling;
 
-    const handleToggle = () => {
-      this.checked = !this.isChecked;
-      this.#updateCallbacks.forEach(callback => callback(this.isChecked));
+    const handleToggle = (e) => {
+      const { type, code: key } = e;
+
+      if (
+        type === 'click' ||
+        (type === 'keydown' && (key === 'Enter') | (key === 'Space'))
+      ) {
+        this.checked = !this.isChecked;
+        this.#updateCallbacks.forEach((callback) => callback(this.isChecked));
+      }
     };
 
     wraprerElement.addEventListener('click', handleToggle);
+    wraprerElement.addEventListener('keydown', handleToggle);
   }
 
   #parseElement() {
