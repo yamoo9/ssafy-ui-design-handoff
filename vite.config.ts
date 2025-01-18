@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/ssafy-ui-design-handoff/',
   server: {
     host: 'localhost',
     port: 3000,
@@ -9,4 +10,7 @@ export default defineConfig({
     host: 'localhost',
     port: 8080,
   },
+  build: {
+    outDir: 'docs'
+  }
 });
