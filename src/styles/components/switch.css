@@ -1,1 +1,55 @@
-.Switch {}
+.switch--wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .switch--label {
+    font-size: 14px;
+  }
+}
+
+.switch[role="switch"] {
+  --width: 32px;
+  --height: 18px;
+  --radius: 100px;
+  --padding: 1px;
+  --background-color: rgb(var(--color-gray-50)); /* #edeaea */
+
+  --knob-size: calc(var(--height) - var(--padding) * 2);
+  --knob-color: rgb(var(--color-white)); /* #ffffff */
+  --knob-storke-color: rgb(var(--color-gray-100)); /* #e2e2e2 */
+  
+  --active-x: calc(var(--width) - var(--knob-size) - var(--padding) * 2);
+  --active-background-color: rgb(var(--color-primary)); /* #004fff */
+  
+  --easing-function: cubic-bezier(0.85, 0.09, 0.15, 0.91);
+  --easing-duration: 0.2s;
+  
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  width: var(--width);
+  height: var(--height);
+  background-color: var(--background-color);
+  border-radius: var(--radius);
+  padding: var(--padding);
+  transition: all var(--easing-duration) var(--easing-function);
+
+  &[aria-checked="true"] {
+    background-color: var(--active-background-color);
+
+    .switch--knob {
+      translate: var(--active-x) 0;
+    }
+  }
+  
+  .switch--knob {
+    width: var(--knob-size);
+    height: var(--knob-size);
+    border-radius: var(--radius);
+    border: 0.5px solid var(--knob-storke-color);
+    background-color: var(--knob-color);
+    transition: inherit;
+  }
+}
