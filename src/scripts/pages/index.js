@@ -1,6 +1,5 @@
-import './styles/main.css';
-import { createSwitch } from './components/switch.js';
-import { createChip } from './components/chip.js';
+import { createSwitch } from '@/components/switch.js';
+import { createChip } from '@/components/chip.js';
 
 /* -------------------------------------------------------------------------- */
 /* Switch Demo                                                                */
@@ -24,13 +23,13 @@ themeSwitch.onUpdate((isChecked) => {
 });
 
 fontSizeSwitch.onUpdate((isChecked) => {
-  const fontSizeControl = document.querySelector('.font-size-control')
+  const fontSizeControl = document.querySelector('.font-size-control');
   if (isChecked) {
     fontSizeControl.style.fontSize = '20px';
   } else {
     fontSizeControl.style.removeProperty('font-size');
   }
-})
+});
 
 /* -------------------------------------------------------------------------- */
 /* Chip Demo                                                                  */
@@ -46,5 +45,5 @@ chips.forEach((chip, index) => {
         chip.pressed = false;
       });
     }
-  })
+  });
 });
