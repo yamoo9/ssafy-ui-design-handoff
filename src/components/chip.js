@@ -3,9 +3,15 @@ class Chip {
 
   constructor(element) {
     this.#element = element;
+    
     if (!this.hasPressedState) {
       this.pressed = false;
     }
+
+    if (this.isPressed) {
+      this.disabled = true;
+    }
+
     this.#bind();
   }
 
@@ -21,12 +27,30 @@ class Chip {
     return this.#element.getAttribute('aria-pressed');
   }
 
+  get isDisabled() {
+    return this.disabled === 'true';
+  }
+
+  get disabled() {
+    return this.#element.getAttribute('aria-disabled');
+  }
+
+  set disabled(newState) {
+    this.#element.setAttribute('aria-disabled', newState);
+  }
+
   set pressed(newState) {
     this.#element.setAttribute('aria-pressed', newState);
+    if (this.isPressed) {
+      this.disabled = true;
+    } else {
+      this.disabled = false;
+    }
   }
 
   #bind() {
     this.#element.addEventListener('click', (e) => {
+      if (this.isDisabled) return;
       this.toggleState();
       this.#updateCallbacks.forEach((callback) => callback(this.isPressed));
     });

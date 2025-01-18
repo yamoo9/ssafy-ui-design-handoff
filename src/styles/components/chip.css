@@ -7,11 +7,16 @@
   font-weight: 600;
   line-height: 1;
   color: inherit;
+
   &[aria-pressed="true"] {
     --color-active: rgb(var(--color-primary));
 
     background-color: var(--color-active);
     border-color: var(--color-active);
     color: rgb(var(--color-white));
+  }
+
+  &[aria-disabled="true"] {
+    cursor: not-allowed;
   }
 }
