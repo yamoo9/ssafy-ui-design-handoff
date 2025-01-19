@@ -1,7 +1,6 @@
 .demo {
   display: flex;
   flex-flow: column;
-  justify-content: start;
   align-items: center;
   gap: 40px;
   margin-block-start: 20px;
