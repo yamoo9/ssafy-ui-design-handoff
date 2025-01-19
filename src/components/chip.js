@@ -49,7 +49,7 @@ class Chip {
   }
 
   #bind() {
-    this.#element.addEventListener('click', (e) => {
+    this.#element.addEventListener('click', () => {
       if (this.isDisabled) return;
       this.toggleState();
       this.#updateCallbacks.forEach((callback) => callback(this.isPressed));
@@ -72,7 +72,7 @@ class Chip {
 }
 
 export function createChip(selector) {
-  const chipElements = Array.from(document.querySelectorAll('.chip'));
+  const chipElements = Array.from(document.querySelectorAll(selector));
   return chipElements.map((element) => new Chip(element));
 }
 

@@ -9,7 +9,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "lint": "eslint --cache './src/**/*.js'",
-    "format": "prettier --cache --write './src/**/*.js'"
+    "format": "prettier --cache --write './src/**/*.js'",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "pnpm lint",
+      "pnpm format"
+    ]
   },
   "devDependencies": {
     "@eslint/js": "9.18.0",
@@ -17,6 +24,8 @@
     "autoprefixer": "10.4.20",
     "eslint": "9.18.0",
     "globals": "15.14.0",
+    "husky": "9.1.7",
+    "lint-staged": "15.4.1",
     "postcss": "8.5.1",
     "prettier": "3.4.2",
     "sharp": "0.33.5",

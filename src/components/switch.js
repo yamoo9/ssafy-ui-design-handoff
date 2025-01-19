@@ -21,7 +21,7 @@ class Switch {
   }
 
   set checked(newValue) {
-    return this.#switchElement.setAttribute('aria-checked', newValue);
+    this.#switchElement.setAttribute('aria-checked', newValue);
   }
 
   onUpdate(callback) {
@@ -39,8 +39,6 @@ class Switch {
 
   #bind() {
     const wraprerElement = this.#switchWrapper;
-    const labelElement = wraprerElement.querySelector('.switch--label');
-    const switchElement = labelElement.nextElementSibling;
 
     const handleToggle = (e) => {
       const { type, code: key } = e;
