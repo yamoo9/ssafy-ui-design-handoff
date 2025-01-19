@@ -144,6 +144,8 @@
     "json": false,
   },
 
+  // "tailwindCSS.rootFontSize": 10,
+
   "tailwindCSS.classAttributes": [
     "class",
     "className",

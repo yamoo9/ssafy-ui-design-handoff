@@ -75,3 +75,16 @@ export function createChip(selector) {
   const chipElements = Array.from(document.querySelectorAll('.chip'));
   return chipElements.map((element) => new Chip(element));
 }
+
+export function onlyOneSelectChips(chips) {
+  chips.forEach((chip, index) => {
+    chip.onUpdate((isPressed) => {
+      if (isPressed) {
+        const filteredChips = chips.filter((_, i) => i !== index);
+        filteredChips.forEach((chip) => {
+          chip.pressed = false;
+        });
+      }
+    });
+  });
+}

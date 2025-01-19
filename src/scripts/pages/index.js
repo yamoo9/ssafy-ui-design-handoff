@@ -1,5 +1,5 @@
 import { createSwitch } from '@/components/switch.js';
-import { createChip } from '@/components/chip.js';
+import { createChip, onlyOneSelectChips } from '@/components/chip.js';
 
 /* -------------------------------------------------------------------------- */
 /* Switch Demo                                                                */
@@ -36,14 +36,4 @@ fontSizeSwitch.onUpdate((isChecked) => {
 /* -------------------------------------------------------------------------- */
 
 const chips = createChip('.chip-list .chip');
-
-chips.forEach((chip, index) => {
-  chip.onUpdate((isPressed) => {
-    if (isPressed) {
-      const filteredChips = chips.filter((_, i) => i !== index);
-      filteredChips.forEach((chip) => {
-        chip.pressed = false;
-      });
-    }
-  });
-});
+onlyOneSelectChips(chips);

@@ -7,29 +7,261 @@
     <meta name="description" content="UI 컴포넌트 디자인(설계) 분석 후, Tailwind CSS 프레임워크를 사용해 웹 개발 코드로 핸드오프" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <script type="module" src="/src/scripts/main.js"></script>
-    <script type="module" src="/src/scripts/pages/tailwindcss.js"></script>
+    <script type="module" src="/src/scripts/main.js" ></script>
+    <script type="module" src="/src/scripts/pages/tailwindcss.js" ></script>
     <base href="%BASE_URL%" />
   </head>
 
-  <body>
+  <body class="flex flex-col justify-center items-center min-h-screen">
 
-    <div class="demo">
-      <section role="group">
-        <h1 class="sr-only">컴포넌트 디자인</h1>
-        <ul class="switch-list">
-          <li><div class="switch" data-label="테마(Theme)"></div></li>
-          <li><div class="switch" data-label="글자 확대"></div></li>
-        </ul>
-        <p class="font-size-control">스위치를 누르면 글자 크기가 변경됩니다.</p>
+    <header class="flex flex-col items-center gap-3 pt-5">
+      <a
+        href="index.html"
+        class="grid place-content-center text-xs size-7 rounded-full hover:bg-primary text-achromatic-700 hover:text-white duration-200"
+        aria-label="홈페이지"
+      >←</a>
+      <h1 class="text-lg font-normal text-primary">페이지 디자인 → 코드 핸드오프</h1>
+    </header>
+
+    <main class="flex my-5">
+      <section
+        class="overflow-hidden resize-none sm:resize-x w-80 border border-slate-200"
+      >
+        <img
+          hidden
+          src="/images/status-bar-i-phone.svg"
+          alt="폰 상태 표시줄 (시간, 통신, 배터리 상태 정보 제공)"
+        />
+        <header>
+          <div class="flex justify-between items-center p-3">
+            <h2
+              lang="en"
+              title="상품 기획자(Merchandiser)의 선택 상품"
+              class="text-achromatic-950 text-lg font-bold"
+            >
+              MD's Pick
+            </h2>
+            <a
+              href=""
+              class="text-achromatic-600 text-xs"
+            >모두 보기</a>
+          </div>
+          <div class="flex gap-1 py-2 px-3 overflow-x-scroll scrollbar-hidden">
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+              aria-pressed="true"
+            >전체</button>
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+            >아우터</button>
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+            >바지</button>
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+            >티셔츠</button>
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+            >점퍼</button>
+            <button
+              type="button"
+              class="chip flex-shrink-0"
+            >원피스</button>
+          </div>
+        </header>
+        <section
+          class="flex content-start flex-wrap p-1.5"
+          aria-label="상품 목록"
+        >
+          <article class="flex flex-col gap-1 p-[3px] w-1/2">
+            <a href="">
+              <img
+                src="/photos/photo-01.jpg"
+                alt=""
+                class="rounded-xl object-cover"
+              />
+              <div class="flex flex-col gap-0.5 m-[9px]">
+                <h3
+                  lang="en"
+                  class="text-achromatic-700 text-xs truncate"
+                >
+                  Boucle Half Wool Coat Cream
+                </h3>
+                <div class="flex items-center gap-1">
+                  <span
+                    class="text-achromatic-800 text-sm font-semibold flex-shrink-0"
+                  >21,000원</span>
+                  <span
+                    class="text-primary text-[11px] font-semibold">15%</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="flex flex-col gap-1 p-[3px] w-1/2">
+            <a href="">
+              <img
+                src="/photos/photo-02.jpg"
+                alt=""
+                class="rounded-xl object-cover"
+              />
+              <div class="flex flex-col gap-0.5 m-[9px]">
+                <h3
+                  lang="en"
+                  class="text-achromatic-700 text-xs truncate"
+                >
+                  Mustang Jacket Beige
+                </h3>
+                <div class="flex items-center gap-1">
+                  <span
+                    class="text-achromatic-800 text-sm font-semibold flex-shrink-0"
+                  >11,000원</span>
+                  <span
+                    class="text-primary text-[11px] font-semibold">12%</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="flex flex-col gap-1 p-[3px] w-1/2">
+            <a href="">
+              <img
+                src="/photos/photo-03.jpg"
+                alt=""
+                class="rounded-xl object-cover"
+              />
+              <div class="flex flex-col gap-0.5 m-[9px] w-1/2">
+                <h3
+                  lang="en"
+                  class="text-achromatic-700 text-xs truncate"
+                >
+                  Oversized Leather Blouson
+                </h3>
+                <div class="flex items-center gap-1">
+                  <span
+                    class="text-achromatic-800 text-sm font-semibold flex-shrink-0"
+                  >67,200원</span>
+                  <span class="text-primary text-[11px] font-semibold">7%</span>
+                </div>
+              </div>
+            </a>
+          </article>
+          <article class="flex flex-col gap-1 p-[3px] w-1/2">
+            <a href="">
+              <img
+                src="/photos/photo-04.jpg"
+                alt=""
+                class="rounded-xl object-cover"
+              />
+              <div class="flex flex-col gap-0.5 m-[9px]">
+                <h3
+                  lang="en"
+                  class="text-achromatic-700 text-xs truncate"
+                >
+                  Belted Goose Down Jacket
+                </h3>
+                <div class="flex items-center gap-1">
+                  <span
+                    class="text-achromatic-800 text-sm font-semibold flex-shrink-0"
+                  >31,000원</span>
+                  <span
+                    class="text-primary text-[11px] font-semibold">17%</span>
+                </div>
+              </div>
+            </a>
+          </article>
+        </section>
+        <nav
+          aria-label="내비게이션 탭바"
+          class="bg-white shadow-[0px_-1px_6px_0px_rgba(0,0,0,0.10)]"
+        >
+          <ul class="list-none my-0 flex justify-between gap-5 p-3">
+            <li class="flex-1 flex-shrink-0 text-xs text-achromatic-700">
+              <a
+                href=""
+                class="flex flex-col items-center gap-1 leading-none flex-shrink-0"
+              >
+                <svg
+                  aria-hidden="true"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.2 11.3L13.2 2.3C12.8 1.9 12.2 1.9 11.8 2.3L2.8 11.3C2.4 11.7 2.4 12.3 2.8 12.7C3.2 13.1 3.8 13.1 4.2 12.7L4.5 12.4V20C4.5 21.1 5.4 22 6.5 22H9.5V16C9.5 14.3 10.8 13 12.5 13C14.2 13 15.5 14.3 15.5 16V22H18.5C19.6 22 20.5 21.1 20.5 20V12.4L20.8 12.7C21 12.9 21.3 13 21.5 13C21.7 13 22 13 22.2 12.7C22.6 12.3 22.6 11.7 22.2 11.3Z"
+                    fill="#1E1E1E"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+                홈
+              </a>
+            </li>
+            <li class="flex-1 flex-shrink-0 text-xs text-achromatic-700">
+              <a
+                href=""
+                class="flex flex-col items-center gap-1 leading-none flex-shrink-0"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M6.75 8V5.75H4.5C4.36193 5.75 4.25 5.86193 4.25 6V10.25H20.75V6C20.75 5.86193 20.6381 5.75 20.5 5.75H18.25V8H16.75V5.75H8.25V8H6.75ZM4.5 4.25H6.75V2H8.25V4.25H16.75V2H18.25V4.25H20.5C21.4665 4.25 22.25 5.0335 22.25 6V20C22.25 20.9665 21.4665 21.75 20.5 21.75H4.5C3.5335 21.75 2.75 20.9665 2.75 20V6C2.75 5.0335 3.5335 4.25 4.5 4.25ZM4.25 20V11.75H20.75V20C20.75 20.1381 20.6381 20.25 20.5 20.25H4.5C4.36193 20.25 4.25 20.1381 4.25 20ZM11.5539 18.0577L16.0333 13.5273L14.9667 12.4727L11.5361 15.9422L10.0244 14.4638L8.9756 15.5362L11.5539 18.0577Z"
+                    fill="#1E1E1E"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+                공개예정
+              </a>
+            </li>
+            <li class="flex-1 flex-shrink-0 text-xs text-achromatic-700">
+              <a
+                href=""
+                class="flex flex-col items-center gap-1 leading-none flex-shrink-0"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M1.75 8.062C1.75 4.79228 4.52567 2.25 7.889 2.25C9.62236 2.25 11.3313 2.96155 12.5 4.16672C13.669 2.96151 15.3785 2.25 17.111 2.25C20.4743 2.25 23.25 4.79228 23.25 8.062C23.25 10.4692 22.0356 12.474 20.1563 14.5234C18.833 15.9664 17.1076 17.5049 15.1286 19.2695C14.3201 19.9903 13.4693 20.7489 12.5864 21.5542C12.3 21.8153 11.8619 21.8153 11.5756 21.5541C11.4881 21.4743 11.4011 21.395 11.3147 21.3162C8.37087 18.6315 6.01589 16.4838 4.39534 14.4886C2.70865 12.412 1.75 10.4214 1.75 8.062ZM7.889 3.75C5.26433 3.75 3.25 5.70772 3.25 8.062C3.25 9.95461 3.99785 11.62 5.55966 13.5429C7.05319 15.3817 9.2289 17.383 12.082 19.9858C12.8215 19.3162 13.5268 18.6873 14.1956 18.091C16.1434 16.3543 17.7813 14.8939 19.0507 13.5096C20.8389 11.5595 21.75 9.90783 21.75 8.062C21.75 5.70772 19.7357 3.75 17.111 3.75C15.4956 3.75 13.9414 4.55368 13.122 5.77001C12.9827 5.97693 12.7495 6.101 12.5 6.101C12.2505 6.101 12.0173 5.97693 11.878 5.77001C11.0586 4.55363 9.50533 3.75 7.889 3.75Z"
+                    fill="#1E1E1E"
+                    fill-opacity="0.5"
+                  />
+                </svg>
+                홈
+              </a>
+            </li>
+            <li class="flex-1 flex-shrink-0 text-xs text-achromatic-700">
+              <a
+                href=""
+                class="flex flex-col items-center gap-1 leading-none flex-shrink-0"
+                lang="en"
+              >
+                <img
+                  src="/photos/profile-02.jpg"
+                  alt=""
+                  class="size-6 rounded-full border border-primary"
+                />
+                ME
+              </a>
+            </li>
+          </ul>
+        </nav>
       </section>
-      <nav class="chip-list">
-        <button type="button" class="chip" aria-pressed="true">공개 예정</button>
-        <button type="button" class="chip">모두의 인기 콘텐츠</button>
-        <button type="button" class="chip">TOP 5</button>
-      </nav>
-      <a href="index.html"><abbr title="Cascading Style Sheets">CSS</abbr> 버전</a>
-    </div>
+    </main>
 
   </body>
 

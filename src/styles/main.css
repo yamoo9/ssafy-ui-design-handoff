@@ -1,8 +1,15 @@
-@layer config, base, components, utilities;
-@import './config.css' layer(config);
+@layer base, components, utilities;
+
+@import 'tailwindcss/base';
+@import './config.css' layer(base);
 @import './base/normalize.css' layer(base);
 @import './base/base.css' layer(base);
+
+@import 'tailwindcss/components';
 @import './components/demo.css' layer(components);
 @import './components/switch.css' layer(components);
 @import './components/chip.css' layer(components);
+
+@import 'tailwindcss/utilities';
 @import './utilities/a11y.css' layer(utilities);
+@import './utilities/scrollbar.css' layer(utilities);
