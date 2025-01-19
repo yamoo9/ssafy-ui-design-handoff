@@ -1,6 +1,7 @@
-import { readdir } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'vite';
+import { fileURLToPath } from 'node:url';
+import { readdir } from 'node:fs/promises';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 // HTML 페이지 폴더 지정
 const pageFileInputs = await readAllPages('./pages');
@@ -27,6 +28,12 @@ const viteConfig = defineConfig({
       '@': path('./src'),
     },
   },
+  plugins: [
+    ViteImageOptimizer({
+      cache: true,
+      cacheLocation: '.cache'
+    }),
+  ],
   build: {
     outDir: 'docs',
     rollupOptions: {

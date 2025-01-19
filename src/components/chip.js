@@ -3,7 +3,7 @@ class Chip {
 
   constructor(element) {
     this.#element = element;
-    
+
     if (!this.hasPressedState) {
       this.pressed = false;
     }

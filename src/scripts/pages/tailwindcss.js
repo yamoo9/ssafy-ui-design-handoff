@@ -1,4 +1,4 @@
-import { createChip, onlyOneSelectChips } from "@/components/chip";
+import { createChip, onlyOneSelectChips } from '@/components/chip';
 
 const chips = createChip('.chip');
 onlyOneSelectChips(chips);
