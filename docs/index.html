@@ -8,16 +8,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/ssafy-ui-design-handoff/favicon.svg" type="image/svg+xml" />
     <base href="/ssafy-ui-design-handoff/" />
-    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/main-Bl3q0lTC.js"></script>
-    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/index-p6u40S5n.js"></script>
-    <link rel="stylesheet" crossorigin href="/ssafy-ui-design-handoff/assets/main-P1Yyc0BT.css">
+    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/main-CcltsgOX.js"></script>
+    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/switch-ClspoC4K.js"></script>
+    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/chip-Bg4RHhnF.js"></script>
+    <script type="module" crossorigin src="/ssafy-ui-design-handoff/assets/index-BbRmKqQW.js"></script>
+    <link rel="stylesheet" crossorigin href="/ssafy-ui-design-handoff/assets/main-C4kYA_s2.css">
   </head>
 
   <body>
 
+    <header class="flex flex-col items-center gap-3 pt-5">
+      <a
+        href="pages/tailwindcss.html"
+        class="grid place-content-center text-xs size-7 rounded-full hover:bg-primary text-achromatic-700 hover:text-white duration-200"
+        aria-label="페이지 디자인 핸드오프"
+        title="페이지 디자인 핸드오프 페이지로 이동"
+      >→</a>
+      <h1 class="text-lg font-normal text-primary">컴포넌트 디자인 핸드오프</h1>
+    </header>
+
     <div class="demo">
-      <section role="group">
-        <h1 class="sr-only">컴포넌트 디자인</h1>
+      <section role="group" aria-label="컴포넌트 디자인 데모">
         <ul class="switch-list">
           <li><div class="switch" data-label="테마(Theme)"></div></li>
           <li><div class="switch" data-label="글자 확대"></div></li>
@@ -29,7 +40,6 @@
         <button type="button" class="chip">모두의 인기 콘텐츠</button>
         <button type="button" class="chip">TOP 5</button>
       </nav>
-      <a href="pages/tailwindcss.html">Tailwind CSS 버전</a>
     </div>
 
   </body>

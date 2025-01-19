@@ -1,10 +1,10 @@
 .demo {
   display: flex;
   flex-flow: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   gap: 40px;
-  height: 100vh;
+  margin-block-start: 20px;
 
   section[role="group"] {
     display: flex;

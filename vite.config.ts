@@ -6,7 +6,10 @@ import { defineConfig } from 'vite';
 const pageFileInputs = await readAllPages('./pages');
 
 // 페이지 별 JavaScript 폴더 지정
-const pageScripts = await readAllPageScripts('./src/scripts/pages');
+const pageScripts = await readAllScripts('./src/scripts/pages');
+
+// 컴포넌트 별 JavaScript 폴더 지정
+const componentScripts = await readAllScripts('./src/components');
 
 // Vite 구성
 const viteConfig = defineConfig({
@@ -34,6 +37,7 @@ const viteConfig = defineConfig({
       output: {
         manualChunks: {
           ...pageScripts,
+          ...componentScripts,
         },
       },
     },
@@ -53,8 +57,8 @@ async function readAllPages(dirPath: string) {
   return Object.fromEntries(input);
 }
 
-// 지정된 폴더 경로의 모든 페이지 별 JavaScript 파일 가져오기 함수
-async function readAllPageScripts(dirPath: string) {
+// 지정된 폴더 경로의 모든 JavaScript 파일 가져오기 함수
+async function readAllScripts(dirPath: string) {
   const pageFilePath = await readdir(path(dirPath), {
     encoding: 'utf-8',
   });
